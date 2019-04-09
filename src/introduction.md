@@ -2,7 +2,7 @@
 
 <!-- # Rust 🦀 and WebAssembly 🕸 -->
 
-この薄い本は[Rust][]と[WebAssembly][]を組み合わせて使う方法を書いています。
+この小さな本は[Rust][]と[WebAssembly][]を組み合わせて使う方法を書いています。
 
 <!-- This small book describes how to use [Rust][] and [WebAssembly][] together. -->
 
