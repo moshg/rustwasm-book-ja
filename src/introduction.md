@@ -61,8 +61,8 @@ pull request!**][repo] -->
 
 [Rust]: https://www.rust-lang.org
 [WebAssembly]: https://webassembly.org/
-[trpl]: https://doc.rust-lang.org/book/
-[mdn]: https://developer.mozilla.org/en-US/docs/Learn
+[trpl]: https://doc.rust-jp.rs/book/second-edition/
+[mdn]: https://developer.mozilla.org/ja/docs/Learn
 [why-rust-wasm]: ./why-rust-and-webassembly.html
 [background]: ./background-and-concepts.html
 [tutorial]: ./game-of-life/introduction.html
