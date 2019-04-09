@@ -1,4 +1,4 @@
-# Rust🦀とWebAssembly🕸
+# Rust🦀 and WebAssembly🕸
 
 <!-- # Rust 🦀 and WebAssembly 🕸 -->
 

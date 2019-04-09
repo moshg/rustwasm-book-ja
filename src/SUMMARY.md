@@ -1,7 +1,7 @@
 # 概要
 
 - [イントロダクション](./introduction.md)
-- [なぜRustとWebAssembly？](./why-rust-and-webassembly.md)
+- [なぜRust and WebAssembly？](./why-rust-and-webassembly.md)
 - [背景とコンセプト](./background-and-concepts.md)
   - [WebAssemblyとは？](./what-is-webassembly.md)
 --------------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-# なぜRustとWebAssembly？
+# なぜRust and WebAssembly？
 
 <!-- # Why Rust and WebAssembly? -->
 
@@ -44,7 +44,7 @@ benefits. And you can even stop there if you want to. -->
 
 <!-- ## Plays Well With Others -->
 
-RustとWebAssemblyは既にあるJavaScriptのツールと組み合わせられます。ECMScriptのモジュールがサポートされていて、npmやWebpackやGreenkeeperのような既に気に入っているツールを使い続けられます。
+Rust and WebAssemblyは既にあるJavaScriptのツールと組み合わせられます。ECMScriptのモジュールがサポートされていて、npmやWebpackやGreenkeeperのような既に気に入っているツールを使い続けられます。
 
 <!-- Rust and WebAssembly integrates with existing JavaScript tooling. It supports
 ECMAScript modules and you can continue using the tooling you already love, like

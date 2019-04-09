@@ -2,7 +2,7 @@
 
 <!-- # Tutorial: Conway's Game of Life -->
 
-これは[ライフゲーム][gol]をRustとWebAssemblyで実装するチュートリアルです。
+これは[ライフゲーム][gol]をRust and WebAssemblyで実装するチュートリアルです。
 
 <!-- This is a tutorial that implements [Conway's Game of Life][gol] in Rust and
 WebAssembly. -->
@@ -46,11 +46,11 @@ HTML. You definitely do not need to be an expert. -->
 
 <!-- * How to debug WebAssembly modules compiled from Rust. -->
 
-* RustとWebAssemblyを組み合わせたプログラムをより速くするためにプロファイルする方法。
+* Rust and WebAssemblyのプログラムをより速くするためにプロファイルする方法。
 
 <!-- * How to time profile Rust and WebAssembly programs to make them faster. -->
 
-* RustとWebAssemblyを組み合わせたプログラムをより小さくし、ネットワーク越しのダウンロードをより速くするためのサイズプロファイルの方法。
+* Rust and WebAssemblyのプログラムをより小さくし、ネットワーク越しのダウンロードをより速くするためのサイズプロファイルの方法。
 
 <!-- * How to size profile Rust and WebAssembly programs to make `.wasm` binaries
   smaller and faster to download over the network. -->
