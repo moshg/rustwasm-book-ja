@@ -1,4 +1,4 @@
-# Summary
+# 概要
 
 - [イントロダクション](./introduction.md)
 - [なぜRustとWebAssembly？](./why-rust-and-webassembly.md)
