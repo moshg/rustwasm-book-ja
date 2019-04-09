@@ -6,7 +6,7 @@
   - [WebAssemblyとは？](./what-is-webassembly.md)
 --------------------------------------------------------------------------------
 - [チュートリアル](./game-of-life/introduction.md)
-    - [Setup](./game-of-life/setup.md)
+    - [セットアップ](./game-of-life/setup.md)
     - [Hello, World!](./game-of-life/hello-world.md)
     - [Rules](./game-of-life/rules.md)
     - [Implementing Life](./game-of-life/implementing.md)
