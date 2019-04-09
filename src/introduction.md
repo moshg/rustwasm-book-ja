@@ -10,7 +10,7 @@
 
 <!-- ## Who is this book for? -->
 
-この本は速くて信頼性のあるウェブのコードのために、RustをWebAssemblyにコンパイルすることに興味があるすべての人に向けた本です。読者はある程度Rustを知っていて、JavaScriptやHTMLやCSSに親しみがあるべきです。しかし、それらの熟練者である必要はありません。
+この本は速く信頼性のあるウェブのコードのために、RustをWebAssemblyにコンパイルすることに興味があるすべての人に向けた本です。読者はある程度Rustを知っていて、JavaScriptやHTMLやCSSに親しみを持っていることが推奨されます。しかし、それらのエキスパートである必要はありません。
 
 <!-- This book is for anyone interested in compiling Rust to WebAssembly for fast,
 reliable code on the Web. You should know some Rust, and be familiar with
@@ -28,13 +28,13 @@ JavaScriptやHTMLやCSSを知りませんか？[MDNでそれらを学びまし�
 
 <!-- ## How to read this book -->
 
-初めに[背景とコンセプト][background]に親しみ、そして[RustとWebAssemblyを組み合わせて使う動機][why-rust-wasm]も読むべきです。
+初めに[背景とコンセプト][background]に親しみを持ち、そして[RustとWebAssemblyを組み合わせて使う動機][why-rust-wasm]も同様に読むのがよいでしょう。
 
 <!-- You should read [the motivation for using Rust and WebAssembly
 together][why-rust-wasm], as well as familiarize yourself with the [background
 and concepts][background] first. -->
 
-[チュートリアル][tutorial]は最初から最後まで読むように書かれています。読者はチュートリアルのコードを自分で書き、コンパイルし、実行しながら追いかけるべきです。
+[チュートリアル][tutorial]は最初から最後まで読むように書かれています。読者はチュートリアルのコードを自分で書き、コンパイルし、実行しながら追いかけることが望ましいです。
 もしこれまでにRustとWebAssemblyを組み合わせて使ったことがないのならチュートリアルをやりましょう！
 
 <!-- The [tutorial][] is written to be read from start to finish. You should follow
