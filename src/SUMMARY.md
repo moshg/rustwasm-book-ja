@@ -5,7 +5,7 @@
 - [背景とコンセプト](./background-and-concepts.md)
   - [WebAssemblyとは？](./what-is-webassembly.md)
 --------------------------------------------------------------------------------
-- [Tutorial](./game-of-life/introduction.md)
+- [チュートリアル](./game-of-life/introduction.md)
     - [Setup](./game-of-life/setup.md)
     - [Hello, World!](./game-of-life/hello-world.md)
     - [Rules](./game-of-life/rules.md)
