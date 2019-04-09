@@ -2,11 +2,11 @@
 
 <!-- # Rust 🦀 and WebAssembly 🕸 -->
 
-この薄い本はどのように[Rust][]と[WebAssembly][]を組み合わせて使うかについて書いています。
+この薄い本は[Rust][]と[WebAssembly][]を組み合わせて使う方法を書いています。
 
 <!-- This small book describes how to use [Rust][] and [WebAssembly][] together. -->
 
-## この本は誰のためのもの？
+## この本の対象読者は？
 
 <!-- ## Who is this book for? -->
 
@@ -24,7 +24,7 @@ JavaScriptやHTMLやCSSを知りませんか？[MDNでそれらを学びまし�
 
 <!-- Don't know JavaScript, HTML, or CSS? [Learn about them on MDN.][mdn] -->
 
-## どのようにこの本を読むか
+## この本の読み方
 
 <!-- ## How to read this book -->
 

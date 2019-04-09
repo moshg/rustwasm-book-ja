@@ -9,7 +9,7 @@ WebAssembly. -->
 
 [gol]: https://ja.wikipedia.org/wiki/%E3%83%A9%E3%82%A4%E3%83%95%E3%82%B2%E3%83%BC%E3%83%A0
 
-## このチュートリアルは誰のためのもの？
+## このチュートリアルの対象読者は？
 
 <!-- ## Who is this tutorial for? -->
 
@@ -28,7 +28,7 @@ HTML. You definitely do not need to be an expert. -->
 
 <!-- ## What will I learn? -->
 
-* WebAssemblyへコンパイルするためにどのようにRustのツールチェインをセットアップするか。
+* WebAssemblyへコンパイルするためにRustのツールチェインをセットアップする方法。
 
 <!-- * How to set up a Rust toolchain for compiling to WebAssembly. -->
 
