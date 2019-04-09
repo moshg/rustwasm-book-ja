@@ -2,7 +2,7 @@
 
 - [イントロダクション](./introduction.md)
 - [なぜRustとWebAssembly？](./why-rust-and-webassembly.md)
-- [Background And Concepts](./background-and-concepts.md)
+- [背景とコンセプト](./background-and-concepts.md)
   - [What is WebAssembly?](./what-is-webassembly.md)
 --------------------------------------------------------------------------------
 - [Tutorial](./game-of-life/introduction.md)
