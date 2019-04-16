@@ -1,37 +1,55 @@
 # Hello, World!
 
-This section will show you how to build and run your first Rust and WebAssembly
-program: a Web page that alerts "Hello, World!"
+この節では初めてのRust and WebAssemblyプログラム——"Hello, World!"とアラートするウェブページ——をどうビルドし実行するかを説明します。
 
-Make sure you have followed the [setup instructions](setup.html) before beginning.
+<!-- This section will show you how to build and run your first Rust and WebAssembly
+program: a Web page that alerts "Hello, World!" -->
 
-## Clone the Project Template
+始める前に必ず[セットアップの指示](setup.html)に従ってください。
 
-The project template comes pre-configured with sane defaults, so you can quickly
-build, integrate, and package your code for the Web.
+<!-- Make sure you have followed the [setup instructions](setup.html) before beginning. -->
 
-Clone the project template with this command:
+## プロジェクトテンプレートをクローンする
+
+<!-- ## Clone the Project Template -->
+
+プロジェクトテンプレートが真っ当な既定の状態に予め設定されるので、ウェブのためのコードを素早くビルドし、統合し、パッケージ化できるようになります。
+
+<!-- The project template comes pre-configured with sane defaults, so you can quickly
+build, integrate, and package your code for the Web. -->
+
+このコマンドでプロジェクトテンプレートをクローンします:
+
+<!-- Clone the project template with this command: -->
 
 ```text
 cargo generate --git https://github.com/rustwasm/wasm-pack-template
 ```
 
-This should prompt you for the new project's name. We will use
-**"wasm-game-of-life"**.
+このコマンドを入力すると新しいプロジェクトの名前を入力するよう促されるはずです。ここでは **"wasm-game-of-life"** とします。
+
+<!-- This should prompt you for the new project's name. We will use
+**"wasm-game-of-life"**. -->
 
 ```text
 wasm-game-of-life
 ```
 
-## What's Inside
+## 入っているもの
 
-Enter the new `wasm-game-of-life` project 
+<!-- ## What's Inside -->
+
+wasm-game-of-lifeプロジェクトに入ってください
+
+<!-- Enter the new `wasm-game-of-life` project -->
 
 ```
 cd wasm-game-of-life
 ```
 
-and let's take a look at its contents:
+そしてその中身を見ましょう:
+
+<!-- and let's take a look at its contents: -->
 
 ```text
 wasm-game-of-life/
@@ -44,23 +62,60 @@ wasm-game-of-life/
     └── utils.rs
 ```
 
-Let's take a look at a couple of these files in detail.
+これらのファイルから二つを詳細に見ましょう。
+
+<!-- Let's take a look at a couple of these files in detail. -->
 
 ### `wasm-game-of-life/Cargo.toml`
 
-The `Cargo.toml` file specifies dependencies and metadata for `cargo`, Rust's
+`Cargo.toml`ファイルは依存と`cargo`——Rustのパッケージマネージャでありビルドツールである——のメタデータを指定します。このファイルは`wasm-bindgen`への依存とあとで掘り下げるオプションの依存と`crate-type`が`.wasm`ライブラリを生成するよう正しく初期化された状態に予め設定されています。
+
+<!-- The `Cargo.toml` file specifies dependencies and metadata for `cargo`, Rust's
 package manager and build tool. This one comes pre-configured with a
 `wasm-bindgen` dependency, a few optional dependencies we will dig into later,
-and the `crate-type` properly initialized for generating `.wasm` libraries.
+and the `crate-type` properly initialized for generating `.wasm` libraries. -->
 
 ### `wasm-game-of-life/src/lib.rs`
 
-The `src/lib.rs` file is the root of the Rust crate that we are compiling to
+`src/lib.rs`ファイルはWebAssemblyにコンパイルするRustクレートのルートです。このファイルは`wasm-bindgen`をJavaScriptとのインターフェイスとして使っています。また、JavaScript関数の`window.alert`をインポートし、挨拶メッセージをアラートするRust関数`greet`をエクスポートしています。
+
+<!-- The `src/lib.rs` file is the root of the Rust crate that we are compiling to
 WebAssembly. It uses `wasm-bindgen` to interface with JavaScript. It imports the
 `window.alert` JavaScript function, and exports the `greet` Rust function, which
-alerts a greeting message.
+alerts a greeting message. -->
 
 ```rust
+extern crate cfg_if;
+extern crate wasm_bindgen;
+
+mod utils;
+
+use cfg_if::cfg_if;
+use wasm_bindgen::prelude::*;
+
+cfg_if! {
+    // `wee_alloc` featureが有効になっているとき、
+    // `wee_alloc`をグローバルアロケータとして使います。
+    if #[cfg(feature = "wee_alloc")] {
+        extern crate wee_alloc;
+        #[global_allocator]
+        static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
+    }
+}
+
+#[wasm_bindgen]
+extern {
+    fn alert(s: &str);
+}
+
+#[wasm_bindgen]
+pub fn greet() {
+    alert("Hello, wasm-game-of-life!");
+}
+
+```
+
+<!-- ```rust
 extern crate cfg_if;
 extern crate wasm_bindgen;
 
@@ -88,34 +143,48 @@ extern {
 pub fn greet() {
     alert("Hello, wasm-game-of-life!");
 }
-
-```
+-->
+<!-- ``` -->
 
 ### `wasm-game-of-life/src/utils.rs`
 
-The `src/utils.rs` module provides common utilities to make working with Rust
+`src/utils.rs`モジュールはRustを使って作業することを簡単にする一般的なユーティリティを提供しています。あとでこれらのユーティリティの詳細をチュートリアル内で——例えば[wasmコードのデバッグ](debugging.html)について考えるときに——見ることになりますが、今はこのファイルを無視することができます。
+
+<!-- The `src/utils.rs` module provides common utilities to make working with Rust
 compiled to WebAssembly easier. We will take a look at some of these utilities
 in more detail later in the tutorial, such as when we look at [debugging our wasm
-code](debugging.html), but we can ignore this file for now.
+code](debugging.html), but we can ignore this file for now. -->
 
-## Build the Project
+## プロジェクトをビルドする
 
-We use `wasm-pack` to orchestrate the following build steps:
+<!-- ## Build the Project -->
 
-* Ensure that we have Rust 1.30 or newer and the `wasm32-unknown-unknown`
+`wasm-pack`を使って次のビルド手順を指揮します:
+
+<!-- We use `wasm-pack` to orchestrate the following build steps: -->
+
+* Rust 1.30以上と`wasm32-unknown-unknown`ターゲットを`rustup`を通してインストールしていることを確認します。
+* `cargo`を使用してRustのソースをWebAssemblyの`.wasm`バイナリにコンパイルします。
+* `wasm-bindgen`を使ってRustで生成したWebAssemblyを使用するためのJavaScript APIを生成します。
+
+<!-- * Ensure that we have Rust 1.30 or newer and the `wasm32-unknown-unknown`
   target installed via `rustup`,
 * Compile our Rust sources into a WebAssembly `.wasm` binary via `cargo`,
 * Use `wasm-bindgen` to generate the JavaScript API for using our Rust-generated
-  WebAssembly.
+  WebAssembly. -->
 
-To do all of that, run this command inside the project directory:
+それらの全てを行うために、プロジェクトディレクトリでこのコマンドを実行します:
+
+<!-- To do all of that, run this command inside the project directory: -->
 
 ```
 wasm-pack build
 ```
 
-When the build has completed, we can find its artifacts in the `pkg` directory,
-and it should have these contents:
+ビルドが完了したとき、その生成物は`pkg`ディレクトリで見つけることができ、中身は次のようになっているはずです:
+
+<!-- When the build has completed, we can find its artifacts in the `pkg` directory,
+and it should have these contents: -->
 
 ```
 pkg/
@@ -126,15 +195,19 @@ pkg/
 └── wasm_game_of_life.js
 ```
 
-The `README.md` file is copied from the main project, but the others are
-completely new.
+`README.md`ファイルはメインプロジェクトからコピーされていますが、他のファイルはまったく新しいものです。
+
+<!-- The `README.md` file is copied from the main project, but the others are
+completely new. -->
 
 ### `wasm-game-of-life/pkg/wasm_game_of_life_bg.wasm`
 
-The `.wasm` file is the WebAssembly binary that is generated by the Rust
+`.wasm`ファイルはRustのソースからRustコンパイラによって生成されたWebAssemblyのバイナリです。Rustの関数とデータ全てのwasmにコンパイルされたバージョンを含んでいます。例えば、エクスポートされた"greet"関数を含んでいます。
+
+<!-- The `.wasm` file is the WebAssembly binary that is generated by the Rust
 compiler from our Rust sources. It contains the compiled-to-wasm versions of all
 of our Rust functions and data. For example, it has an exported "greet"
-function.
+function. -->
 
 ### `wasm-game-of-life/pkg/wasm_game_of_life.js`
 
